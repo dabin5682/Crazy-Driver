@@ -12,3 +12,4 @@ RED = (255,0,0)
 pygame.init()
 #프레임 매니저 초기화하기
 clock = pygame.time.Clock()
+test
