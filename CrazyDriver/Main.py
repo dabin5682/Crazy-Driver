@@ -66,6 +66,15 @@ while True:
     keys = pygame.key.get_pressed()
     #적을 아래로 움직이기
     enemy.rect.move_ip(0,moveSpeed)
+    if (enemy.rect.bottom > IMG_ROAD.get_height()):
+        #적 무작위 배치
+        hl= IMG_ENEMY.get_width()//2
+        hr = IMG_ROAD.get_width()-(IMG_ENEMY.get_width()//2)
+        h = random.randrange(hl,hr)
+        v=0
+        enemy.rect.center =(h,v)
+
+    #플레이어 이동설정
     if keys[K_LEFT] and player.rect.left>0:
         player.rect.move_ip(-moveSpeed,0)
         if player.rect.left < 0:
